@@ -1,35 +1,35 @@
-# C#³£ÓÃÈİÆ÷×Ü½á---------Queue<ÀàĞÍ>
-<table><tr><td bgcolor = yellow ><font face = "ºÚÌå" size = 6 color = red >ÏÖÔÚ×Ü½áÈçÏÂ£º</font></table></tr></td>
+# C#å¸¸ç”¨å®¹å™¨æ€»ç»“---------Queue<ç±»å‹>
+<table><tr><td bgcolor = yellow ><font face = "é»‘ä½“" size = 6 color = red >ç°åœ¨æ€»ç»“å¦‚ä¸‹ï¼š</font></table></tr></td>
 
-## Queue<ÀàĞÍ>  (Ïàµ±ÓÚC++ÖĞµÄ queue<ÀàĞÍ>)
+## Queue<ç±»å‹>  (ç›¸å½“äºC++ä¸­çš„ queue<ç±»å‹>)
 
-### 1. ´´½¨Queue
+### 1. åˆ›å»ºQueue
 ```cs
-    Queue<ÀàĞÍ> Ãû×Ö = new Queue<ÀàĞÍ>();
+    Queue<ç±»å‹> åå­— = new Queue<ç±»å‹>();
 
-    //ÀıÈç£º
+    //ä¾‹å¦‚ï¼š
 
      Queue<Tuple<int, int>> qu = new Queue<Tuple<int, int>>();
 ```
 
-### 2. Ìí¼ÓÔªËØ
-- ÔÚ¶ÓÁĞÄ©Î²Ìí¼ÓÒ»¸öÔªËØ
+### 2. æ·»åŠ å…ƒç´ 
+- åœ¨é˜Ÿåˆ—æœ«å°¾æ·»åŠ ä¸€ä¸ªå…ƒç´ 
 ```cs
     Queue.Enqueue(element);
 
-    // ÀıÈç£º
+    // ä¾‹å¦‚ï¼š
 
     Queue qu = new Queue();
 
     qu.Enqueue('A');
 
 ```
-### 3. ¶ÁÈ¡Í·²¿ÔªËØ
-- ÔÚ¶ÁÈ¡Ö®ºó¾ÍÉ¾³ıËü
+### 3. è¯»å–å¤´éƒ¨å…ƒç´ 
+- åœ¨è¯»å–ä¹‹åå°±åˆ é™¤å®ƒ
 ```cs
     element = Queue.Dequeue();
 
-    // ÀıÈç£º
+    // ä¾‹å¦‚ï¼š
 
     Queue qu = new Queue();
 
@@ -39,11 +39,11 @@
     
     c = qu.Dequeue();
 ```
-- Ö»¶ÁÈ¡£¬²»É¾³ı
+- åªè¯»å–ï¼Œä¸åˆ é™¤
 ```cs
     element = Queue.Peek();
 
-    // ÀıÈç£º
+    // ä¾‹å¦‚ï¼š
 
     Queue qu = new Queue();
 
@@ -54,11 +54,11 @@
     c = qu.Peek();
 ```
 
-### 4. ÅĞ¶ÏÒ»¸öÔªËØÊÇ·ñÔÚ¶ÓÁĞÖĞ
+### 4. åˆ¤æ–­ä¸€ä¸ªå…ƒç´ æ˜¯å¦åœ¨é˜Ÿåˆ—ä¸­
 ```cs
-    Queue.Contains(element);//·µ»Øtrue/false
+    Queue.Contains(element);//è¿”å›true/false
 
-    //ÀıÈç
+    //ä¾‹å¦‚
 
      if (qu.Contains("Hunter"))
     {
@@ -70,15 +70,15 @@
         Console.WriteLine("Add Hunter successfully.");
     }
 ```
-## 5.Çå¿ÕQueue
+## 5.æ¸…ç©ºQueue
 ```cs
     Queue.Clear();
 ```
-## 7.»ñµÃQueueÖĞÔªËØµÄÊıÁ¿
+## 7.è·å¾—Queueä¸­å…ƒç´ çš„æ•°é‡
 ```cs
     Queue.Count();
 
-    //ÀıÈç£º
+    //ä¾‹å¦‚ï¼š
 
     int count = qu.Count();
 

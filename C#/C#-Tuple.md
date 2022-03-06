@@ -1,34 +1,34 @@
-# C#³£ÓÃÈİÆ÷×Ü½á---------Tuple<ÀàĞÍ£¬¡¤¡¤¡¤¡¤>
-<table><tr><td bgcolor = yellow ><font face = "ºÚÌå" size = 6 color = red >ÏÖÔÚ×Ü½áÈçÏÂ£º</font></table></tr></td>
+# C#å¸¸ç”¨å®¹å™¨æ€»ç»“---------Tuple<ç±»å‹ï¼ŒÂ·Â·Â·Â·>
+<table><tr><td bgcolor = yellow ><font face = "é»‘ä½“" size = 6 color = red >ç°åœ¨æ€»ç»“å¦‚ä¸‹ï¼š</font></table></tr></td>
 
-## Tuple<ÀàĞÍ,¡¤¡¤>  (Ïàµ±ÓÚC++ÖĞµÄ pair<ÀàĞÍ,¡¤>)
+## Tuple<ç±»å‹,Â·Â·>  (ç›¸å½“äºC++ä¸­çš„ pair<ç±»å‹,Â·>)
 
-### 1.¶¨Òå
+### 1.å®šä¹‰
 ```cs
-    Tuple<ÀàĞÍ£¬ÀàĞÍ> Ãû³Æ = new Tuple<ÀàĞÍ£¬ÀàĞÍ>(element1£¬element2);
+    Tuple<ç±»å‹ï¼Œç±»å‹> åç§° = new Tuple<ç±»å‹ï¼Œç±»å‹>(element1ï¼Œelement2);
 
-    //ÀıÈç£º
+    //ä¾‹å¦‚ï¼š
 
-    //Ò»¸öÔªËØµÄÔª×é
+    //ä¸€ä¸ªå…ƒç´ çš„å…ƒç»„
     Tuple<int> test = new Tuple<int>(34);
  
-    //Á½¸öÔªËØµÄÔª×é 1<n<8
+    //ä¸¤ä¸ªå…ƒç´ çš„å…ƒç»„ 1<n<8
     Tuple<string, int> test2 = Tuple.Create<string, int>("str", 2);
     Tuple<int, int> test2_1 = new Tuple<int, int>(2,2);
 
 ```
 
-### 2.»ñÈ¡Ôª×éÄÚµÄÖµ
-    Ôª×éÔªËØ¿ÉÒÔÍ¨¹ı Item < elementnumber > ÊôĞÔ·ÃÎÊ
+### 2.è·å–å…ƒç»„å†…çš„å€¼
+    å…ƒç»„å…ƒç´ å¯ä»¥é€šè¿‡ Item < elementnumber > å±æ€§è®¿é—®
     
-    ÀıÈç Item1¡¢ Item2¡¢ Item3µÈ£¬×î¶à¿ÉÒÔ·ÃÎÊ Item7ÊôĞÔ¡£
+    ä¾‹å¦‚ Item1ã€ Item2ã€ Item3ç­‰ï¼Œæœ€å¤šå¯ä»¥è®¿é—® Item7å±æ€§ã€‚
     
-    Item1ÊôĞÔ·µ»ØµÚÒ»¸öÔªËØ£¬Item2·µ»ØµÚ¶ş¸öÔªËØ£¬ÒÀ´ËÀàÍÆ¡£
+    Item1å±æ€§è¿”å›ç¬¬ä¸€ä¸ªå…ƒç´ ï¼ŒItem2è¿”å›ç¬¬äºŒä¸ªå…ƒç´ ï¼Œä¾æ­¤ç±»æ¨ã€‚
     
 ```cs
     Tuple<int, string, string> person = new Tuple <int, string, string>(1, "Steve", "Jobs");
-    person.Item1; // ·µ»Ø 1
-    person.Item2; // ·µ»Ø "Steve"
-    person.Item3; // ·µ»Ø "Jobs"    
+    person.Item1; // è¿”å› 1
+    person.Item2; // è¿”å› "Steve"
+    person.Item3; // è¿”å› "Jobs"    
 ```
 

@@ -1,63 +1,64 @@
-# C#³£ÓÃÈİÆ÷×Ü½á---------HashÀà
-<table><tr><td bgcolor = yellow ><font face = "ºÚÌå" size = 6 color = red >ÏÖÔÚ×Ü½áÈçÏÂ£º</font></table></tr></td>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+# C#å¸¸ç”¨å®¹å™¨æ€»ç»“---------Hashç±»
+<table><tr><td bgcolor = yellow ><font face = "é»‘ä½“" size = 6 color = red >ç°åœ¨æ€»ç»“å¦‚ä¸‹ï¼š</font></table></tr></td>
 
-## HashÀà (Ïàµ±ÓÚC++ÖĞµÄ map<ÀàĞÍ£¬ÀàĞÍ¡¤¡¤¡¤¡¤>)
+## Hashç±» (ç›¸å½“äºC++ä¸­çš„ map<ç±»å‹ï¼Œç±»å‹Â·Â·Â·Â·>)
 
-## Ò»¡¢Dictionary<Type,Type>
-- DictionaryÀïÃæµÄÃ¿Ò»¸öÔªËØ¶¼ÊÇÒ»¸ö¼üÖµ¶Ô(ÓÉ¶ş¸öÔªËØ×é³É£º¼üºÍÖµ)
-- ¼ü±ØĞëÊÇÎ¨Ò»µÄ,¶øÖµ²»ĞèÒªÎ¨Ò»µÄ
-- ¼üºÍÖµ¶¼¿ÉÒÔÊÇÈÎºÎÀàĞÍ(±ÈÈç£ºstring, int, ×Ô¶¨ÒåÀàĞÍ£¬µÈµÈ)
-- Í¨¹ıÒ»¸ö¼ü¶ÁÈ¡Ò»¸öÖµµÄÊ±¼äÊÇ½Ó½üO(1)
+## ä¸€ã€Dictionary<Type,Type>
+- Dictionaryé‡Œé¢çš„æ¯ä¸€ä¸ªå…ƒç´ éƒ½æ˜¯ä¸€ä¸ªé”®å€¼å¯¹(ç”±äºŒä¸ªå…ƒç´ ç»„æˆï¼šé”®å’Œå€¼)
+- é”®å¿…é¡»æ˜¯å”¯ä¸€çš„,è€Œå€¼ä¸éœ€è¦å”¯ä¸€çš„
+- é”®å’Œå€¼éƒ½å¯ä»¥æ˜¯ä»»ä½•ç±»å‹(æ¯”å¦‚ï¼šstring, int, è‡ªå®šä¹‰ç±»å‹ï¼Œç­‰ç­‰)
+- é€šè¿‡ä¸€ä¸ªé”®è¯»å–ä¸€ä¸ªå€¼çš„æ—¶é—´æ˜¯æ¥è¿‘O(1)
 
-<font face = "Á¥Êé" size = 6 color = red >DictionaryÓëHashTableÀàËÆ</font>
+<font face = "éš¶ä¹¦" size = 6 color = red >Dictionaryä¸HashTableç±»ä¼¼</font>
 
-### 1.¶¨Òå
+### 1.å®šä¹‰
 ```cs
     Dictionary<string, string> openWith = new Dictionary<string, string>();
 ```
 
-### 2.Ìí¼ÓÔªËØ
+### 2.æ·»åŠ å…ƒç´ 
 ```cs
-    //Ìí¼ÓÔªËØ
+    //æ·»åŠ å…ƒç´ 
     openWith.Add("txt", "notepad.exe");
     openWith.Add("bmp", "paint.exe");
     openWith.Add("dib", "paint.exe");
     openWith.Add("rtf", "wordpad.exe");
 ```
-### 3.ÓÉkeyµÃvalue,¸ü¸ÄÖµ
+### 3.ç”±keyå¾—value,æ›´æ”¹å€¼
 ```cs
     Console.WriteLine(openWith["rtf"]);
 
-    //¸ü¸ÄÖµ
+    //æ›´æ”¹å€¼
 
     openWith["rtf"] = "winword.exe";
 ```
-### 4.±éÀú
-- ±éÀúkey
+### 4.éå†
+- éå†key
 ```cs
     foreach (string key in openWith.Keys)
     {
         Console.WriteLine("Key = {0}", key);
     }
 ```
-- ±éÀúvalue
+- éå†value
 ```cs
-     //±éÀúvalue
+     //éå†value
     foreach (string value in openWith.Values)
     {
         Console.WriteLine("value = {0}", value);
     }
 ```
-- ±éÀú×Öµä
+- éå†å­—å…¸
 ```cs
     foreach (KeyValuePair<string, string> kvp in openWith)
     {
         Console.WriteLine("Key = {0}, Value = {1}", kvp.Key, kvp.Value);
     }
 ```
-### 5.ÅĞ¶ÏkeyÊÇ·ñ´æÔÚ
+### 5.åˆ¤æ–­keyæ˜¯å¦å­˜åœ¨
 ```cs
-//ÅĞ¶Ï¼ü´æÔÚ
+//åˆ¤æ–­é”®å­˜åœ¨
     if (openWith.ContainsKey("bmp")) // True 
     {
         Console.WriteLine("An element with Key = + bmp + exists.");

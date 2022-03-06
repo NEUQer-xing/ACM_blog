@@ -1,81 +1,81 @@
-# SimplifyPath (c++�е�split)
+# SimplifyPath (c++中的split)
 
-**<font color = red size = 15 >����C++��getline()�Լ�istringstreamʵ�����������е�split����**</font>
+**<font color = red size = 15 >利用C++的getline()以及istringstream实现其它语言中的split函数**</font>
 
-## ��Ŀ
-����һ���ַ��� path ����ʾָ��ĳһ�ļ���Ŀ¼��?Unix ��� ����·�� ���� '/' ��ͷ�������㽫��ת��Ϊ���Ӽ��Ĺ淶·����
+## 题目
+给你一个字符串 path ，表示指向某一文件或目录的?Unix 风格 绝对路径 （以 '/' 开头），请你将其转化为更加简洁的规范路径。
 
-�� Unix �����ļ�ϵͳ�У�һ���㣨.����ʾ��ǰĿ¼���������⣬������ ��..��?��ʾ��Ŀ¼�л�����һ����ָ��Ŀ¼�������߶������Ǹ������·������ɲ��֡�������������б�ܣ�����'//'��������Ϊ����б�� '/' �� ���ڴ����⣬�κ�������ʽ�ĵ㣨���磬'...'��������Ϊ�ļ�/Ŀ¼���ơ�
+在 Unix 风格的文件系统中，一个点（.）表示当前目录本身；此外，两个点 （..）?表示将目录切换到上一级（指向父目录）；两者都可以是复杂相对路径的组成部分。任意多个连续的斜杠（即，'//'）都被视为单个斜杠 '/' 。 对于此问题，任何其他格式的点（例如，'...'）均被视为文件/目录名称。
 
-��ע�⣬���ص� �淶·�� ������ѭ������ʽ��
+请注意，返回的 规范路径 必须遵循下述格式：
 
-ʼ����б�� '/' ��ͷ��
-����Ŀ¼��֮�����ֻ��һ��б�� '/' ��
-���һ��Ŀ¼����������ڣ����� �� '/' ��β��
-���⣬·���������Ӹ�Ŀ¼��Ŀ���ļ���Ŀ¼��·���ϵ�Ŀ¼���������� '.' �� '..'����
-���ؼ򻯺�õ��� �淶·�� ��
+始终以斜杠 '/' 开头。
+两个目录名之间必须只有一个斜杠 '/' 。
+最后一个目录名（如果存在）不能 以 '/' 结尾。
+此外，路径仅包含从根目录到目标文件或目录的路径上的目录（即，不含 '.' 或 '..'）。
+返回简化后得到的 规范路径 。
 
-[��Ŀ���ӣ�SimplifyPath](https://leetcode-cn.com/problems/simplify-path)
+[题目链接：SimplifyPath](https://leetcode-cn.com/problems/simplify-path)
 
 
-**ʾ�� 1��**
+**示例 1：**
 
-���룺path = "/home/"
+输入：path = "/home/"
 
-�����"/home"
+输出："/home"
 
-���ͣ�ע�⣬���һ��Ŀ¼������û��б�ܡ� 
+解释：注意，最后一个目录名后面没有斜杠。 
 
-**ʾ�� 2��**
+**示例 2：**
 
-���룺path = "/../"
+输入：path = "/../"
 
-�����"/"
+输出："/"
 
-���ͣ��Ӹ�Ŀ¼����һ���ǲ����еģ���Ϊ��Ŀ¼������Ե������߼���
+解释：从根目录向上一级是不可行的，因为根目录是你可以到达的最高级。
 
-**ʾ�� 3��**
+**示例 3：**
 
-���룺path = "/home//foo/"
+输入：path = "/home//foo/"
 
-�����"/home/foo"
+输出："/home/foo"
 
-���ͣ��ڹ淶·���У��������б����Ҫ��һ��б���滻��
+解释：在规范路径中，多个连续斜杠需要用一个斜杠替换。
 
-**ʾ�� 4��**
+**示例 4：**
 
-���룺path = "/a/./b/../../c/"
+输入：path = "/a/./b/../../c/"
 
-�����"/c"
+输出："/c"
 ?
 
-**��ʾ��**
+**提示：**
 
 1 <= path.length <= 3000
-path ��Ӣ����ĸ�����֣�'.'��'/' �� '_' ��ɡ�
-path ��һ����Ч�� Unix ������·����
+path 由英文字母，数字，'.'，'/' 或 '_' 组成。
+path 是一个有效的 Unix 风格绝对路径。
 
-## getline():�������
+## getline():函数简介
 
-getline()��ԭ����
+getline()的原型是
 
 <font size = 5>**istream& getline ( istream &is , string &str , char delim );**</font>
 
-- ���� istream &is ��ʾһ����������Ʃ��cin��
-- string&str��ʾ�Ѵ�������������ַ������������ַ����У������Լ����������strʲô�Ķ����ԣ���
-- **char delim��ʾ��������ַ�ֹͣ����**���ڲ����õ������ϵͳĬ�ϸ��ַ�Ϊ'\n'��Ҳ���ǻس����з��������س�ֹͣ���룩��
+- 其中 istream &is 表示一个输入流，譬如cin；
+- string&str表示把从输入流读入的字符串存放在这个字符串中（可以自己随便命名，str什么的都可以）；
+- **char delim表示遇到这个字符停止读入**，在不设置的情况下系统默认该字符为'\n'，也就是回车换行符（遇到回车停止读入）。
 
 ## istringstream sin(s)
 
-istringstream�Ĺ��캯��ԭ�����£�
+istringstream的构造函数原形如下：
 
 - <font size = 5> **istringstream::istringstream(string str);**
 
-  <font color = red> ���������Ǵ�string����str�ж�ȡ�ַ���</font>
+  <font color = red> 它的作用是从string对象str中读取字符。</font>
 
 ```cpp
 #include<iostream>  
-#include<sstream>        //istringstream ����������ͷ�ļ�
+#include<sstream>        //istringstream 必须包含这个头文件
 #include<string>  
 using namespace std;  
 int main()  
@@ -90,17 +90,17 @@ int main()
 } 
 ```
 
-## ˼·
-    ���� / Ϊ�ָ�������ַ����ָ��������ַ������ļ�������
-    ������Щ�ַ�����
-    ������������ļ�����ֱ����ջ��
-    �����".."����ջ��Ԫ�أ�
-    �����'.'���ù�����
-    ������ٱ���ջ������ջ��Ԫ�ز��뵽�����ַ�����ͷ��ͬʱ����'/'��
+## 思路
+    先以 / 为分割符，将字符串分割成许多个字符串（文件名），
+    遍历这些字符串，
+    如果是正常的文件名就直接入栈，
+    如果是".."弹出栈顶元素，
+    如果是'.'不用管他，
+    到最后再遍历栈，将出栈的元素插入到返回字符串的头上同时加上'/'。
 
-�ο������۵�����
+参考了评论的内容
 
-## ����
+## 代码
 
 ```cpp
 class Solution {

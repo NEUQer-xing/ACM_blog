@@ -1,35 +1,35 @@
-# C#³£ÓÃÈİÆ÷×Ü½á---------Stack<ÀàĞÍ>
-<table><tr><td bgcolor = yellow ><font face = "ºÚÌå" size = 6 color = red >ÏÖÔÚ×Ü½áÈçÏÂ£º</font></table></tr></td>
+# C#å¸¸ç”¨å®¹å™¨æ€»ç»“---------Stack<ç±»å‹>
+<table><tr><td bgcolor = yellow ><font face = "é»‘ä½“" size = 6 color = red >ç°åœ¨æ€»ç»“å¦‚ä¸‹ï¼š</font></table></tr></td>
 
-## Stack<ÀàĞÍ>  (Ïàµ±ÓÚC++ÖĞµÄ stack<ÀàĞÍ>)
+## Stack<ç±»å‹>  (ç›¸å½“äºC++ä¸­çš„ stack<ç±»å‹>)
 
-### 1. ´´½¨Stack
+### 1. åˆ›å»ºStack
 ```cs
-    Stack<ÀàĞÍ> Ãû×Ö = new Stack<ÀàĞÍ>();
+    Stack<ç±»å‹> åå­— = new Stack<ç±»å‹>();
 
-    //ÀıÈç£º
+    //ä¾‹å¦‚ï¼š
 
      Stack<Tuple<int, int>> st = new Stack<Tuple<int, int>>();
 ```
 
-### 2. Ìí¼ÓÔªËØ
-- ÔÚÕ»¶¥Ìí¼ÓÒ»¸öÔªËØ
+### 2. æ·»åŠ å…ƒç´ 
+- åœ¨æ ˆé¡¶æ·»åŠ ä¸€ä¸ªå…ƒç´ 
 ```cs
     Stack.Push(element);
 
-    // ÀıÈç£º
+    // ä¾‹å¦‚ï¼š
 
     Stack st = new Stack();
 
     st.Push('A');
 
 ```
-### 3. ¶ÁÈ¡Õ»¶¥ÔªËØ
-- ÔÚ¶ÁÈ¡Ö®ºó¾ÍÉ¾³ıËü
+### 3. è¯»å–æ ˆé¡¶å…ƒç´ 
+- åœ¨è¯»å–ä¹‹åå°±åˆ é™¤å®ƒ
 ```cs
     element = Stack.Dequeue();
 
-    // ÀıÈç£º
+    // ä¾‹å¦‚ï¼š
 
     Stack st = new Stack();
 
@@ -39,11 +39,11 @@
     
     c = st.Pop();
 ```
-- Ö»¶ÁÈ¡£¬²»É¾³ı
+- åªè¯»å–ï¼Œä¸åˆ é™¤
 ```cs
     element = Stack.Peek();
 
-    // ÀıÈç£º
+    // ä¾‹å¦‚ï¼š
 
     Stack st = new Stack();
 
@@ -54,11 +54,11 @@
     c = st.Peek();
 ```
 
-### 4. ÅĞ¶ÏÒ»¸öÔªËØÊÇ·ñÔÚ¶ÑÕ»ÖĞ
+### 4. åˆ¤æ–­ä¸€ä¸ªå…ƒç´ æ˜¯å¦åœ¨å †æ ˆä¸­
 ```cs
-    Stack.Contains(element);//·µ»Øtrue/false
+    Stack.Contains(element);//è¿”å›true/false
 
-    //ÀıÈç
+    //ä¾‹å¦‚
 
      if (st.Contains("Hunter"))
     {
@@ -70,15 +70,15 @@
         Console.WriteLine("Add Hunter successfully.");
     }
 ```
-## 5.Çå¿ÕQueue
+## 5.æ¸…ç©ºQueue
 ```cs
     Stack.Clear();
 ```
-## 7.»ñµÃQueueÖĞÔªËØµÄÊıÁ¿
+## 7.è·å¾—Queueä¸­å…ƒç´ çš„æ•°é‡
 ```cs
     Stack.Count();
 
-    //ÀıÈç£º
+    //ä¾‹å¦‚ï¼š
 
     int count = st.Count();
 

@@ -1,33 +1,33 @@
-# C#³£ÓÃÈİÆ÷×Ü½á---------List<ÀàĞÍ>
-<table><tr><td bgcolor = yellow ><font face = "ºÚÌå" size = 6 color = red >ÏÖÔÚ×Ü½áÈçÏÂ£º</font></table></tr></td>
+# C#å¸¸ç”¨å®¹å™¨æ€»ç»“---------List<ç±»å‹>
+<table><tr><td bgcolor = yellow ><font face = "é»‘ä½“" size = 6 color = red >ç°åœ¨æ€»ç»“å¦‚ä¸‹ï¼š</font></table></tr></td>
 
-## List<ÀàĞÍ>  (Ïàµ±ÓÚC++ÖĞµÄ vector<ÀàĞÍ>)
+## List<ç±»å‹>  (ç›¸å½“äºC++ä¸­çš„ vector<ç±»å‹>)
 
-### 1.´´½¨ List<>
+### 1.åˆ›å»º List<>
 
 ```cs
-    List<ÀàĞÍ> Ãû×Ö = new List<ÀàĞÍ>();
+    List<ç±»å‹> åå­— = new List<ç±»å‹>();
     
-    //ÀıÈç£º
+    //ä¾‹å¦‚ï¼š
 
     List<int> nums = new List<int>();
 ```
-### 2.Ìí¼ÓÔªËØ
-- Ò»¸öÔªËØ
+### 2.æ·»åŠ å…ƒç´ 
+- ä¸€ä¸ªå…ƒç´ 
 ```cs
-    List.Add(element)£» 
+    List.Add(element)ï¼› 
     
-    //ÀıÈç£º
+    //ä¾‹å¦‚ï¼š
 
     List<string> mList = new List<string>();
 
     mList.Add("John");
 ```
-- Ìí¼ÓÒ»×éÔªËØ
+- æ·»åŠ ä¸€ç»„å…ƒç´ 
 ```cs
     List.AddRange(a group of element)
     
-    //ÀıÈç£º
+    //ä¾‹å¦‚ï¼š
 
     List<string> mList = new List<string>();
 
@@ -35,57 +35,57 @@
 
     mList.AddRange(temArr);   
 ```
-- ÔÚindexÎ»ÖÃ²åÈëÔªËØ
+- åœ¨indexä½ç½®æ’å…¥å…ƒç´ 
 ```cs
     List.Insert(index, element);
 
-    //ÀıÈç£º
+    //ä¾‹å¦‚ï¼š
 
     List<string> mList = new List<string>();
 
     mList.Insert(2, "Hei");
 ```
-- ±éÀúÔªËØ
-    ¿ÉÒÔÓÃfor()+index
-    Ò²¿ÉÒÔÓÃforeach()
+- éå†å…ƒç´ 
+    å¯ä»¥ç”¨for()+index
+    ä¹Ÿå¯ä»¥ç”¨foreach()
 ```cs
-    foreach (T element in mList)  //TµÄÀàĞÍÓëmListÉùÃ÷Ê±Ò»Ñù
+    foreach (T element in mList)  //Tçš„ç±»å‹ä¸mListå£°æ˜æ—¶ä¸€æ ·
     {
         Console.WriteLine(element);
     }
 ```
-## 3.É¾³ıÔªËØ
-- É¾³ıÒ»¸öÔªËØ
+## 3.åˆ é™¤å…ƒç´ 
+- åˆ é™¤ä¸€ä¸ªå…ƒç´ 
 ```cs
     List. Remove(element)
 
-    //ÀıÈç£º
+    //ä¾‹å¦‚ï¼š
 
     mList.Remove("Hunter");
 ```
-- É¾³ıÏÂ±êÎªindexµÄÔªËØ
+- åˆ é™¤ä¸‹æ ‡ä¸ºindexçš„å…ƒç´ 
 ```cs
     List. RemoveAt(index);   
 
-    //ÀıÈç£º
+    //ä¾‹å¦‚ï¼š
 
     mList.RemoveAt(0);
 ```
 
-- ´ÓÏÂ±êindex¿ªÊ¼£¬É¾³ıcount¸öÔªËØ
+- ä»ä¸‹æ ‡indexå¼€å§‹ï¼Œåˆ é™¤countä¸ªå…ƒç´ 
 ```cs
     List. RemoveRange(index, count);
 
-    //ÀıÈç£º
+    //ä¾‹å¦‚ï¼š
 
     mList.RemoveRange(3, 2);
 ```
-## 4.²éÕÒÔªËØ
-- ÅĞ¶ÏÊÇ·ñÔÚListÖĞ£º·µ»Øtrue/false
+## 4.æŸ¥æ‰¾å…ƒç´ 
+- åˆ¤æ–­æ˜¯å¦åœ¨Listä¸­ï¼šè¿”å›true/false
 ```cs
     List.Contains(element);
 
-    //ÀıÈç
+    //ä¾‹å¦‚
 
      if (mList.Contains("Hunter"))
     {
@@ -97,22 +97,22 @@
         Console.WriteLine("Add Hunter successfully.");
     }
 ```
-## 5.ÅÅĞò 
+## 5.æ’åº 
 ```cs
-    List.Sort();//ÉıĞòÅÅĞò
+    List.Sort();//å‡åºæ’åº
 
     List.Sort();
-    List.Reverse(); //½µĞòÅÅĞò
+    List.Reverse(); //é™åºæ’åº
 ```
-## 6.Çå¿ÕList
+## 6.æ¸…ç©ºList
 ```cs
     List.Clear();
 ```
-## 7.»ñµÃListÖĞÔªËØµÄÊıÁ¿
+## 7.è·å¾—Listä¸­å…ƒç´ çš„æ•°é‡
 ```cs
     List.Count();
 
-    //ÀıÈç£º
+    //ä¾‹å¦‚ï¼š
 
     int count = mList.Count();
 
